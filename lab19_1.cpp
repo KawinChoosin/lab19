@@ -20,21 +20,42 @@ string toUpperStr(string x){
     return y;
 }
 
-void importDataFromFile(){
-
+void importDataFromFile(string f,vector<string> n, vector<int> s,vector<char> g){
+    char format[]=" %s %d %s";
+    string textline;
+    ifstream source;
+    source.open (f);
+    for(int i=0;getline(source,textline);i++){
+        sscanf(textline,format,n,&s,g)
+        n[i]=n;
+        s[i]=s;
+        g[i]=g;
+    }
 }
 
-void getCommand(){
-
+void getCommand(string command,string key){
+    cout<<"Please input your command: ";
+    cin>>command>>key;
 }
 
-void searchName(){
-
+void searchName(vector<string> n, vector<int> s,vector<char> g,string key){
+     cout << "---------------------------------\n";
+    for(int i=0;toUpperStr(n[i])==key;i++){
+        cout<<n[i]<<" 's score = "<<s[i];
+        cout<<n[i]<<" 's grade = "<<g[i];
+    }
+     cout << "---------------------------------\n";
 }
 
-void searchGrade(){
-
+void searchGrade(vector<string> n, vector<int> s,vector<char> g,string key){
+     cout << "---------------------------------\n";
+    for(int i=0;toUpperStr(g[i])==key;i++){
+        cout<<n[i]<<" ("<<i<<") \n";
+    }
+     cout << "---------------------------------\n";
 }
+
+
 
 
 int main(){
